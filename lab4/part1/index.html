@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCSS Numbers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="numbers">
+        <div class="number" data-n="1">1</div>
+        <div class="number" data-n="2">2</div>
+        <div class="number" data-n="3">3</div>
+        <!-- Остальные числа будут добавлены с помощью JavaScript -->
+    </div>
+
+    <script>
+        const container = document.querySelector('.numbers');
+        // Очищаем контейнер от примеров
+        container.innerHTML = '';
+        // Создаем 100 элементов
+        for (let i = 1; i <= 100; i++) {
+            const div = document.createElement('div');
+            div.className = 'number';
+            div.setAttribute('data-n', i);
+            div.textContent = i;
+            container.appendChild(div);
+        }
+    </script>
+</body>
+</html> 

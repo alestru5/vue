@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Кликер (CDN)</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; }
+        .clicker { margin: 20px 0; }
+        button { font-size: 18px; padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="clicker">
+            <p>Счетчик: {{ count }}</p>
+            <button @click="count++">Кликнуть</button>
+        </div>
+    </div>
+    <script>
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    count: 0
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html> 

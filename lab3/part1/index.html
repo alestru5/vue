@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 3</title>
+    <style>
+        body {
+            font-family: serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .welcome {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .greeting {
+            font-style: italic;
+        }
+        .greeting u {
+            text-decoration: none;
+            border-bottom: 1px solid black;
+        }
+        .greeting a {
+            color: blue;
+            text-decoration: underline;
+        }
+        .theorem {
+            margin: 20px 0;
+        }
+        h1 {
+            display: inline;
+            font-size: 1em;
+            font-weight: normal;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            font-weight: normal;
+        }
+        .old-price {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome">
+        Добро пожаловать!
+    </div>
+    <div class="greeting">
+        Приветствуем <u>вас</u> в нашем <a href="http://example.com">магазине</a>!
+    </div>
+    
+    <div class="theorem">
+        <h1>Теорема Пифагора</h1>: c<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup>
+    </div>
+
+    <table>
+        <tr>
+            <th colspan="2">Информация</th>
+        </tr>
+        <tr>
+            <td>Старая цена: <span class="old-price">1000 ₽</span></td>
+            <td>Новая цена: 500 ₽</td>
+        </tr>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html> 

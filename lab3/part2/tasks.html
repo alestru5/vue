@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 3 - Задания</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 200vh; /* для демонстрации прокрутки */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Задание 2: Адаптивный текст */
+        .device-type::after {
+            content: "Desktop";
+            font-size: 24px;
+            display: block;
+            text-align: center;
+            margin: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .device-type::after {
+                content: "Tablet";
+            }
+        }
+
+        @media (max-width: 768px) {
+            .device-type::after {
+                content: "Mobile";
+            }
+        }
+
+        /* Задание 3: Фиксированное меню */
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+
+        .menu a:hover {
+            color: #ddd;
+        }
+
+        /* Отступ для контента под меню */
+        .content {
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+        /* Задание 4: Синий круг */
+        .circle {
+            width: 60px;
+            height: 60px;
+            background-color: blue;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Задание 3: Меню -->
+    <nav class="menu">
+        <a href="#">Главная</a>
+        <a href="#">Каталог</a>
+        <a href="#">Контакты</a>
+        <a href="#">О нас</a>
+    </nav>
+
+    <div class="content">
+        <h1>Лабораторная работа 3 - Часть 2</h1>
+        
+        <!-- Задание 2: Определение устройства -->
+        <div class="device-type"></div>
+
+        <!-- Задание 4: Круг -->
+        <div class="circle"></div>
+    </div>
+
+    <!-- Задание 5: JavaScript для движения круга -->
+    <script>
+        const circle = document.querySelector('.circle');
+        
+        document.addEventListener('mousemove', (e) => {
+            circle.style.display = 'block';
+            circle.style.left = e.clientX + 'px';
+            circle.style.top = e.clientY + 'px';
+        });
+
+        document.addEventListener('mouseleave', () => {
+            circle.style.display = 'none';
+        });
+    </script>
+</body>
+</html> 

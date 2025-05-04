@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 2 - OOP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .user-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .user-form input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #console {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Лабораторная работа 2 - OOP</h1>
+
+        <!-- Задание 1: Класс User -->
+        <div class="card">
+            <h2>1. Класс User</h2>
+            <div class="user-form">
+                <input type="text" id="userName" placeholder="Имя">
+                <input type="number" id="userAge" placeholder="Возраст">
+                <button onclick="createUser()">Создать пользователя</button>
+            </div>
+        </div>
+
+        <!-- Задание 2: Класс User через функции -->
+        <div class="card">
+            <h2>2. Класс User через функции</h2>
+            <div class="user-form">
+                <input type="text" id="funcUserName" placeholder="Имя">
+                <input type="number" id="funcUserAge" placeholder="Возраст">
+                <button onclick="createFuncUser()">Создать пользователя</button>
+            </div>
+        </div>
+
+        <!-- Задание 3: Телефон -->
+        <div class="card">
+            <h2>3. Телефон</h2>
+            <div class="user-form">
+                <input type="text" id="userTel" placeholder="Телефон (+7xxxxxxxxxx)">
+                <button onclick="setUserTel()">Установить телефон</button>
+            </div>
+        </div>
+
+        <!-- Задание 4: Возраст -->
+        <div class="card">
+            <h2>4. Возраст</h2>
+            <div class="user-form">
+                <input type="number" id="userAgeSetter" placeholder="Возраст (1-100)">
+                <button onclick="setUserAge()">Установить возраст</button>
+            </div>
+        </div>
+
+        <!-- Задание 5: Студент -->
+        <div class="card">
+            <h2>5. Студент</h2>
+            <div class="user-form">
+                <input type="text" id="studentName" placeholder="Имя">
+                <input type="number" id="studentAge" placeholder="Возраст">
+                <button onclick="createStudent()">Создать студента</button>
+                <button onclick="studentLearn()">Учиться</button>
+            </div>
+        </div>
+
+        <!-- Задание 6: Reverse -->
+        <div class="card">
+            <h2>6. Reverse</h2>
+            <div class="user-form">
+                <input type="text" id="arrayInput" placeholder="Массив (через запятую)">
+                <button onclick="testReverse()">Тестировать reverse</button>
+            </div>
+        </div>
+
+        <div id="console"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .calculator {
+            background: #2c3e50;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #display {
+            width: 100%;
+            height: 60px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            background: #ecf0f1;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            padding: 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button.number {
+            background: #34495e;
+            color: white;
+        }
+        button.operator {
+            background: #e67e22;
+            color: white;
+        }
+        button.equals {
+            background: #27ae60;
+            color: white;
+            grid-column: span 2;
+        }
+        button.clear {
+            background: #c0392b;
+            color: white;
+        }
+        button.parenthesis {
+            background: #8e44ad;
+            color: white;
+        }
+        button:hover {
+            filter: brightness(1.2);
+        }
+        .mode-switch {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .mode-switch button {
+            background: #16a085;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="mode-switch">
+            <button onclick="switchMode('basic')">Базовый режим</button>
+            <button onclick="switchMode('rpn')">Режим РПН</button>
+        </div>
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button class="parenthesis" onclick="appendToDisplay('(')">(</button>
+            <button class="parenthesis" onclick="appendToDisplay(')')">)</button>
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            
+            <button class="number" onclick="appendToDisplay('7')">7</button>
+            <button class="number" onclick="appendToDisplay('8')">8</button>
+            <button class="number" onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+            
+            <button class="number" onclick="appendToDisplay('4')">4</button>
+            <button class="number" onclick="appendToDisplay('5')">5</button>
+            <button class="number" onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            
+            <button class="number" onclick="appendToDisplay('1')">1</button>
+            <button class="number" onclick="appendToDisplay('2')">2</button>
+            <button class="number" onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            
+            <button class="number" onclick="appendToDisplay('0')">0</button>
+            <button class="number" onclick="appendToDisplay('.')">.</button>
+            <button class="equals" onclick="calculate()">=</button>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html> 

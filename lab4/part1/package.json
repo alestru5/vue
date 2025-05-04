@@ -1,0 +1,12 @@
+{
+  "name": "lab4-part1",
+  "version": "1.0.0",
+  "scripts": {
+    "sass": "sass layout.sass:layout.sass.css --watch",
+    "less": "lessc layout.less layout.less.css --watch"
+  },
+  "devDependencies": {
+    "less": "^4.2.0",
+    "sass": "^1.69.5"
+  }
+}

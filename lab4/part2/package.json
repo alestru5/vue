@@ -1,0 +1,14 @@
+{
+  "name": "lab4-part2",
+  "version": "1.0.0",
+  "description": "TypeScript Laboratory Work",
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "^5.0.0"
+  }
+}

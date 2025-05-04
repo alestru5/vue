@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #imageContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #imageContainer img {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        #imageContainer p {
+            color: #e74c3c;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .ip-input {
+            margin: 10px 0;
+        }
+
+        .ip-input input {
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .success {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .error {
+            background-color: #e74c3c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Лабораторная работа 2</h1>
+
+        <!-- Задание 1: Счетчик посещений -->
+        <div class="card">
+            <h2>1. Счетчик посещений</h2>
+            <p id="visitCount">Загрузка...</p>
+        </div>
+
+        <!-- Задание 2: Загрузка изображений по порядку -->
+        <div class="card">
+            <h2>2. Загрузка изображений по порядку</h2>
+            <button onclick="loadImagesInOrder()">Загрузить изображения</button>
+            <div id="orderedImages"></div>
+        </div>
+
+        <!-- Задание 3: Загрузка изображений без порядка -->
+        <div class="card">
+            <h2>3. Загрузка изображений без порядка</h2>
+            <button onclick="loadImagesWithoutOrder()">Загрузить изображения</button>
+            <div id="unorderedImages"></div>
+        </div>
+
+        <!-- Задание 4: Загрузка изображений с async/await -->
+        <div class="card">
+            <h2>4. Загрузка изображений с async/await</h2>
+            <button onclick="loadImagesAsync()">Загрузить изображения</button>
+            <div id="asyncImages"></div>
+        </div>
+
+        <!-- Задание 5: Проверка IP-адресов -->
+        <div class="card">
+            <h2>5. Проверка IP-адресов</h2>
+            <div class="ip-input">
+                <input type="text" placeholder="IP-адрес 1">
+                <input type="text" placeholder="IP-адрес 2">
+                <input type="text" placeholder="IP-адрес 3">
+                <input type="text" placeholder="IP-адрес 4">
+                <input type="text" placeholder="IP-адрес 5">
+            </div>
+            <button onclick="checkIPs()">Проверить IP-адреса</button>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
